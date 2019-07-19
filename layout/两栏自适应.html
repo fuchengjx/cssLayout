@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Layout</title>
+  <style>
+
+.box {
+    width: 300px;
+    overflow: hidden;
+}
+img {
+    width: 128px; height: 128px;
+}
+/* 使文字与图片的顶部水平对齐 */
+p {
+  margin-top: 0;
+}
+/* 左浮动 */
+.box-left > img {
+    float: left;
+}
+.box-left > p {
+    margin-left: 140px;
+}
+/* 右浮动，但图片DOM在前 */
+.box-right > img {
+    float: right;
+}
+.box-right > p {
+    margin-right: 140px;
+}
+/* 右浮动，图片DOM在后，和视觉表现一致 */
+.box-right-same > .full {
+    width: 100%;
+    float: left;
+}
+.box-right-same > .full > p {
+    margin-right: 140px;
+}
+.box-right-same > img {
+    float: left;
+    margin-left: -128px;
+}
+
+/* 使用flex布局产生的效果 */
+.Media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.Media-figure {
+  margin-right: 1em;
+}
+
+.Media-body {
+  flex: 1;
+}
+  </style>
+</head>
+
+<body>
+  <h4>左侧固定</h4>
+  <div class="box box-left">
+    <img src="http://img.flura.cn/avatar.jpg" class="img">
+    <p>DOM文档流中，图片定宽在左侧，文字内容在右侧，和视觉呈现的前后顺序一致。</p>
+  </div>
+  
+  <h4>右侧固定-DOM顺序相反</h4>
+  <div class="box box-right">
+    <img src="http://img.flura.cn/avatar.jpg" class="img">
+    <p>DOM文档流中，图片定宽在左侧，视觉上却在右侧，顺序表现不一致。</p>
+  </div>
+  
+  <h4>右侧固定-DOM顺序和视觉一致</h4>
+  <div class="box box-right-same">
+    <div class="full">
+      <p>DOM文档流中，图片定宽在右侧，视觉呈现也在右侧，顺便表现此时一致。</p>
+    </div>
+    <img src="http://img.flura.cn/avatar.jpg" class="img">
+  </div>
+
+  <h4>flex布局</h4>
+  <div class="Media">
+    <img class="Media-figure" src="http://img.flura.cn/avatar.jpg" alt="">
+    <p class="Media-body">这是flex布局的效果</p>
+  </div>
+
+</body>
+</html>
