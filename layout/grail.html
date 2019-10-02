@@ -6,6 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>grail</title>
 <style>
+  .container {
+    padding: 0 200px 0 200px;
+    overflow: hidden;     /* 触发BFC */
+  }
   .center {
     width: 100%;
     background: paleturquoise;
@@ -20,6 +24,8 @@
     font-size: 40px;
     color: #fff;
     margin-left:-100%;
+    position:relative;
+    left: -200px;
   }
   .right {
     width: 200px;
@@ -28,16 +34,42 @@
     font-size: 40px;
     float: left;
     color: #fff;
-    margin-left:-200px;
+    margin-left: -200px;
+    position: relative;
+    right: -200px;
+  }
+  .bd {
+    margin-top: 50px;
+    display: flex;
+    clear: both;
+  }
+  #left {
+    background: palevioletred;
+    width: 200px;
+    height: 200px; 
+  }
+  #right {
+    width: 200px;
+    height: 200px;
+    background: purple;
+  }
+  #middle {
+    flex: 1;
+    background: paleturquoise;
+    height: 200px;
   }
 </style>
 </head>
 <body>
   <div class="container">
-    <div class="center"></div>
+    <div class="center">圣杯布局..........................</div>
     <div class="left"></div>
-
     <div class="right"></div>
+  </div>
+  <div class="bd">
+    <div id="left"></div>
+    <div id="middle">flex实现的 两栏固定，中间可变</div>
+    <div id="right"></div>
   </div>
 </body>
 </html>
