@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>水平居中方法</title>
+  <style>
+    #father {
+      background: pink;
+      height: 200px;
+    }
+    #son {
+      background: green;
+      width: 200px;
+      height: 200px;
+    }
+
+  /* text-align inline-block 这个可以对宽度未知的进行布局*/
+    /* .parent {
+      text-align: center;
+      line-height: 0;
+      font-size: 0;
+      display: inline-block;
+      line-height: 120px;
+    }
+    .child {
+      display: inline;
+      line-height: 150px;
+    } */
+
+
+  /* margin: 0 auto */
+    /* .child {
+      margin: 0 auto;
+    } */
+
+  /* table  */
+  /* .child {
+    display: table;
+    margin: 0 auto;
+  } */
+
+  /* 使用绝对定位实现 */
+  /* .parent {
+    position: relative;
+  }
+  .child {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%)
+  } */
+
+  /* 实现flex布局实现 */
+  /* .parent {
+    display: flex;
+    justify-content: center
+  } */
+
+  </style>
+</head>
+<body>
+  <div id="father" class="parent">
+      <div id="son" class="child"></div>
+  </div>
+</body>
+</html>
