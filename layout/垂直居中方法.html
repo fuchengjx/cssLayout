@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>垂直居中对齐</title>
+  <style>
+    #father {
+      width: 400px;
+      height: 400px;
+      background: pink;
+    }
+    #son {
+      width: 400px;
+      height: 200px;
+      background: green;
+    }
+
+
+    /* 使用vertical-align */
+    /* .parent {
+      display: table-cell;
+      vertical-align: middle;
+    } */
+
+
+    /* 这个是。。。父级元素line-height为高度，子元素设置vertical-align */
+    /* .parent {
+      line-height: 400px;
+    }
+    .child {
+      vertical-align: middle;
+      display: inline-block;
+    } */
+
+
+    /* 使用postion */
+    /* .parent {
+      position: relative;
+    }
+    .child {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%)
+    } */
+
+
+    /* 使用flex */
+    /* .parent {
+      display: flex;
+      align-items: center;
+    } */
+
+  </style>
+</head>
+<body>
+  <div id="father" class="parent">
+    <div id="son" class="child"></div>
+  </div>
+</body>
+</html>
